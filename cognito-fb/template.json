@@ -1,0 +1,18 @@
+{
+  "policyDocument": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": "execute-api:Invoke",
+        "Resource": "{{ values['resouce_restricted'] }}",
+        "Effect": "{{ values.permission }}"
+      },
+      {
+        "Action": "execute-api:Invoke",
+        "Resource": "{{ values.resource_guest }}",
+        "Effect": "Allow"
+      }
+    ]
+  },
+  "principalId": "graph.facebook.com"
+}
